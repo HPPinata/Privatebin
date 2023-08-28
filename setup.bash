@@ -4,7 +4,7 @@
 mkdir /var/privatebin
 cd /var/privatebin
 
-curl -O conf.php https://raw.githubusercontent.com/PrivateBin/PrivateBin/master/cfg/conf.sample.php
+curl -o conf.php https://raw.githubusercontent.com/PrivateBin/PrivateBin/master/cfg/conf.sample.php
 mkdir privatebin-data
 chown -R nobody:nobody privatebin-data
 

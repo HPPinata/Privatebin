@@ -62,7 +62,7 @@ EOL
 
 cat <<'EOL' > /var/privatebin/update.bash
 #!/bin/bash
-cd /var/rprox
+cd /var/privatebin
 docker-compose pull
 docker-compose build --pull
 docker-compose up -dV

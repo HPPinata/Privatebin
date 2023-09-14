@@ -52,9 +52,26 @@ services:
       - PHP_TZ=Europe/Berlin
     restart: unless-stopped
 
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    networks:
+      - intern
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Z3r0P4ss
+      - MYSQL_PASSWORD=Z3r0P4ss
+      - MYSQL_DATABASE=privatebin
+      - MYSQL_USER=privatebin
+      - MARIADB_AUTO_UPGRADE=true
+      - MARIADB_DISABLE_UPGRADE_BACKUP=true
+    restart: unless-stopped
+
 volumes:
   caddy_data:
   caddy_config:
+  db:
 
 networks:
   intern:
